@@ -7,10 +7,10 @@ modos de chakra, Bijūdama, selamento e comandos administrativos.
 no jogo.** Veja `docs/STATUS.md`.
 
 ## Como compilar
-1. Execute `preparar-narutoto.ps1` e informe onde está o JAR original. Ele será copiado para `libs/narutoto-0.4.2.jar`; não precisa colocar o JAR grande dentro do ZIP nem enviá-lo para outra pessoa.
-2. Gere o wrapper do Gradle uma vez: `gradle wrapper --gradle-version 8.8`, ou copie `gradlew`/`gradle/` do Forge MDK 1.20.1-47.3.0.
-3. Execute `compilar.ps1` (JDK 17). O JAR será gerado em `build/libs/`.
-4. Instale no jogo: `narutoto-0.4.2` + `narutoto_expansion-0.1.0.jar` + Forge 47.x.
+1. O JAR original do Narutoto 0.4.2 já está em `libs/narutoto-0.4.2.jar` neste pacote preparado.
+2. No Windows, abra o projeto pelo GitHub Desktop. O arquivo JAR não está mais ignorado pelo `.gitignore`; ele deve aparecer em Changes para ser commitado. O arquivo tem cerca de 47 MB, abaixo do limite de 100 MB por arquivo do GitHub.
+3. Execute `compilar.ps1` (JDK 17), ou deixe o GitHub Actions executar o workflow. O JAR do add-on será gerado em `build/libs/`.
+4. Instale no jogo: o mod original Narutoto 0.4.2, `narutoto_expansion-0.1.0.jar` e Forge 47.x.
 
 Os scripts também podem ser executados pelo PowerShell. Se o Windows bloquear a execução, abra o PowerShell nessa pasta e use `powershell -ExecutionPolicy Bypass -File .\preparar-narutoto.ps1` ou `powershell -ExecutionPolicy Bypass -File .\compilar.ps1`.
 

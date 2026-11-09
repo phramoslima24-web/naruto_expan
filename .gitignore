@@ -8,4 +8,3 @@ out/
 .project
 .settings/
 eclipse/
-libs/*.jar
