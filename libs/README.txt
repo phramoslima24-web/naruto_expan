@@ -1,5 +1,9 @@
-Coloque aqui o JAR original do Narutoto 0.4.1 com este nome exato:
+DEPENDENCIA LOCAL DO NARUTOTO 0.4.1
 
-    narutoto-0.4.1.jar
+Este pacote contém uma cópia do JAR 0.4.1 fornecido pelo usuário para permitir
+a compilação local do addon. Use este arquivo apenas com a instalação autorizada
+do Narutoto e não redistribua o JAR original separadamente.
 
-Este JAR é usado somente como dependência local de compilação. Não o substitua por outra versão.
+O build.gradle está configurado para carregar libs/narutoto-0.4.1.jar usando
+ForgeGradle. Se preferir usar outro arquivo 0.4.1, execute preparar-narutoto.ps1
+e informe o caminho completo; o script copiará o arquivo para essa pasta.
