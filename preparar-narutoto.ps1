@@ -1,9 +1,9 @@
 $ErrorActionPreference = 'Stop'
 $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $libsDir = Join-Path $projectDir 'libs'
-$target = Join-Path $libsDir 'narutoto-0.4.2.jar'
+$target = Join-Path $libsDir 'narutoto-0.4.1.jar'
 
-Write-Host '=== Preparar dependência Narutoto 0.4.2 ===' -ForegroundColor Cyan
+Write-Host '=== Preparar dependência Narutoto 0.4.1 ===' -ForegroundColor Cyan
 Write-Host 'Selecione o JAR original do Narutoto no seu computador.'
 Write-Host 'O arquivo será COPIADO para a pasta libs e renomeado; o original não será alterado.'
 $source = Read-Host 'Cole o caminho completo do arquivo .jar'

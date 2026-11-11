@@ -3,9 +3,9 @@ $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $projectDir
 
 Write-Host '=== Compilar Narutoto Expansion ===' -ForegroundColor Cyan
-$dependency = Join-Path $projectDir 'libs/narutoto-0.4.2.jar'
+$dependency = Join-Path $projectDir 'libs/narutoto-0.4.1.jar'
 if (-not (Test-Path -LiteralPath $dependency)) {
-    Write-Host 'Dependência Narutoto não encontrada em libs/narutoto-0.4.2.jar.' -ForegroundColor Yellow
+    Write-Host 'Dependência Narutoto não encontrada em libs/narutoto-0.4.1.jar.' -ForegroundColor Yellow
     Write-Host 'Execute primeiro: .\preparar-narutoto.ps1'
     Read-Host 'Pressione Enter para sair'
     exit 1

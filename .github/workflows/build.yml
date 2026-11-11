@@ -14,8 +14,8 @@ jobs:
           gradle-version: 8.8
       - name: Verifica o JAR do Narutoto
         run: |
-          if [ ! -f "libs/narutoto-0.4.2.jar" ]; then
-            echo "Dependência ausente: libs/narutoto-0.4.2.jar"
+          if [ ! -f "libs/narutoto-0.4.1.jar" ]; then
+            echo "Dependência ausente: libs/narutoto-0.4.1.jar"
             exit 1
           fi
       - name: Build

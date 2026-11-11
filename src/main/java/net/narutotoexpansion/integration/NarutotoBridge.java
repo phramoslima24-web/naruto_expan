@@ -11,7 +11,7 @@ import java.util.Optional;
 /**
  * The ONLY class of this add-on that touches Narutoto classes.
  * <p>
- * What it uses from Narutoto 0.4.2 (all public API of the original JAR, nothing is modified):
+ * What it uses from Narutoto 0.4.1 (all public API of the original JAR, nothing is modified):
  * <ul>
  *   <li>{@code NarutotoModVariables.PLAYER_VARIABLES_CAPABILITY} - read/write of {@code chakra}, {@code chakra_maximum},
  *       {@code ninja} and read of {@code jinchuriki} (Narutoto stores 9.0 for the Kurama host).</li>

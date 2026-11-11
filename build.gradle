@@ -59,7 +59,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     // Narutoto: required at compile time and at runtime. Place the original JAR in libs/ as
-    // "narutoto-0.4.2.jar" (see README). fg.deobf remaps the production JAR to the dev mappings.
+    // "narutoto-0.4.1.jar" (see README). fg.deobf remaps the production JAR to the dev mappings.
     implementation fg.deobf("local:narutoto:${narutoto_version}")
 }
 

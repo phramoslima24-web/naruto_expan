@@ -1,13 +1,9 @@
-DEPENDENCIA LOCAL DO NARUTOTO
+DEPENDENCIA LOCAL DO NARUTOTO 0.4.1
 
-O JAR original NAO e distribuido neste projeto e nao precisa ser enviado no ZIP.
+Este pacote contém uma cópia do JAR 0.4.1 fornecido pelo usuário para permitir
+a compilação local do addon. Use este arquivo apenas com a instalação autorizada
+do Narutoto e não redistribua o JAR original separadamente.
 
-Execute o arquivo preparar-narutoto.ps1 na pasta principal e informe o caminho
-completo do JAR original. O script fara uma COPIA com o nome exato:
-
-    libs/narutoto-0.4.2.jar
-
-O arquivo original permanece no local de origem. O build.gradle ja esta
-configurado para carregar essa dependencia local usando ForgeGradle.
-
-Nao renomeie nem distribua o JAR original sem permissao do autor.
+O build.gradle está configurado para carregar libs/narutoto-0.4.1.jar usando
+ForgeGradle. Se preferir usar outro arquivo 0.4.1, execute preparar-narutoto.ps1
+e informe o caminho completo; o script copiará o arquivo para essa pasta.

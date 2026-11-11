@@ -6,20 +6,26 @@
 - Arquivos que o registro NÃO chegou a criar (e que foram adicionados agora): `lang/en_us.json` e `pt_br.json`,
   modelos de item (selo + 8 ovos), receita do selo, texturas placeholder (8 bestas, Bijūdama, selo),
   `README.md`, `.gitignore`, `libs/README.txt`, workflow do GitHub Actions, este arquivo.
-- Ainda faltando: `gradlew`/`gradle/wrapper` (não dá para gerar sem Gradle neste ambiente), e o JAR em `libs/`.
+- Ainda faltando: `gradlew`/`gradle/wrapper` (não dá para gerar sem Gradle neste ambiente). O JAR 0.4.1 foi incluído em `libs/`.
+
+## Adaptação para 0.4.1
+- Dependência local substituída pelo JAR 0.4.1 fornecido pelo usuário.
+- Faixa de dependência do mods.toml ajustada para `[0.4.1,0.5)`.
+- Forge configurado para 47.4.10, correspondente ao perfil informado.
+- Conferido no JAR 0.4.1: existem `PLAYER_VARIABLES_CAPABILITY`, os campos `ninja`, `chakra`, `chakra_maximum`, `jinchuriki`, o método `syncPlayerVariables(Entity)` e o efeito `NO_CHARKRA` usados pelo bridge.
 
 ## O que foi realmente verificado
 | Verificação | Resultado |
 |---|---|
 | Parse de sintaxe de todos os 27 arquivos (javac do JDK 21) | sem erros de sintaxe; os únicos erros restantes são "símbolo/pacote não encontrado" por faltarem Forge/Minecraft |
-| Símbolos usados do Narutoto existem no JAR 0.4.2 (`PLAYER_VARIABLES_CAPABILITY`, `ninja`, `chakra`, `chakra_maximum`, `jinchuriki`, `syncPlayerVariables`, `NO_CHARKRA`) | confirmado; os campos são `double` como o código assume |
+| Símbolos usados do Narutoto existem no JAR 0.4.1 (`PLAYER_VARIABLES_CAPABILITY`, `ninja`, `chakra`, `chakra_maximum`, `jinchuriki`, `syncPlayerVariables`, `NO_CHARKRA`) | confirmado; os campos são `double` como o código assume |
 | Chaves de tradução usadas no código existem nos dois idiomas | sim (29 literais + dinâmicas) |
 | Texturas/modelos referenciados existem | sim |
 
 ## NÃO verificado (não considerar pronto)
-- Compilação contra Forge 47.3.0 / mappings oficiais (assinaturas de API foram escritas de memória do 1.20.1).
+- Compilação contra Forge 47.4.10 / mappings oficiais (assinaturas de API foram escritas de memória do 1.20.1).
 - Execução no jogo: capability, rede, selamento, formas, Bijūdama, HUD, comandos, renderização.
-- `fg.deobf("local:narutoto:0.4.2")` com o JAR de produção do Narutoto.
+- `fg.deobf("local:narutoto:0.4.1")` com o JAR de produção do Narutoto.
 - Balanceamento (números são valores iniciais).
 - Visuais: modelo e texturas são placeholders; formas 3 e 4 só têm efeito de atributos/partículas, sem modelo próprio.
 
