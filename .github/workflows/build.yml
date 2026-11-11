@@ -13,11 +13,7 @@ jobs:
         with:
           gradle-version: 8.8
       - name: Verifica o JAR do Narutoto
-        run: |
-          if [ ! -f "libs/narutoto-0.4.1.jar" ]; then
-            echo "Dependência ausente: libs/narutoto-0.4.1.jar"
-            exit 1
-          fi
+        run: test -f libs/narutoto-0.4.1.jar || (echo "Falta libs/narutoto-0.4.1.jar" && exit 1)
       - name: Build
         run: gradle build --no-daemon
       - uses: actions/upload-artifact@v4

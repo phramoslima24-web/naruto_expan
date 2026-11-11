@@ -16,6 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
@@ -112,15 +113,17 @@ public class BijuudamaEntity extends Projectile {
         float radius = Math.min(getRadius(), ExpansionConfig.BOMB_MAX_RADIUS.get().floatValue());
         BeastType type = BeastType.byId(getBeastId());
 
+        ExplosionDamageCalculator calculator = new ExplosionDamageCalculator() {
+            @Override
+            public boolean shouldDamageEntity(Explosion explosion, Entity target) {
+                return target != owner;
+            }
+        };
         Level.ExplosionInteraction interaction = ExpansionConfig.BOMB_TERRAIN_DAMAGE.get()
                 ? Level.ExplosionInteraction.MOB : Level.ExplosionInteraction.NONE;
         boolean fire = type != null && type.fireImmune && interaction != Level.ExplosionInteraction.NONE;
         DamageSource source = damageSources().explosion(this, owner);
-        // In Minecraft 1.20.1 the damage calculator only customizes block resistance
-        // and block destruction. Use the owner as the explosion source so vanilla
-        // excludes that entity from its own explosion damage calculation.
-        server.explode(owner != null ? owner : this, source, null,
-                getX(), getY(), getZ(), radius, fire, interaction);
+        server.explode(this, source, calculator, getX(), getY(), getZ(), radius, fire, interaction);
 
         MobEffect effect = statusEffectFor(type);
         if (effect != null) {
